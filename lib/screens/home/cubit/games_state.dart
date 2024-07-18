@@ -1,34 +1,10 @@
 part of 'games_cubit.dart';
 
-class GamesState extends Equatable {
-  final int page;
-  final GamesLoadStatus status;
-  final List<ResGames> games;
-  final bool hasReachedMax;
-
-  const GamesState({
-    this.status = GamesLoadStatus.initial,
-    this.games = const <ResGames>[],
-    this.page = 1,
-    this.hasReachedMax = false,
-  });
-
-  GamesState copyWith({
-    GamesLoadStatus? status,
-    List<ResGames>? games,
-    int? page,
-    bool? hasReachedMax,
-  }) {
-    return GamesState(
-      status: status ?? this.status,
-      games: games ?? this.games,
-      page: page ?? this.page,
-      hasReachedMax: hasReachedMax ?? this.hasReachedMax,
-    );
-  }
+sealed class GamesState extends Equatable {
+  const GamesState();
 
   @override
-  List<Object?> get props => [status, games, page, hasReachedMax];
+  List<Object?> get props => [];
 }
 
 final class GamesInitial extends GamesState {}

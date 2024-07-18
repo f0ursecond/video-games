@@ -1,16 +1,24 @@
 # video_games
 
-A new Flutter project.
+A new Flutter project. for test case
 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+Before you run the app please create a .env file. The .env is contains a api_key.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+.env
+```
+API_KEY=edd7ac51b37b42559bc4e53685ec4fb3
+```
+after that, you can open terminal and run command :
+```
+flutter run
+```
+**_NOTE:_**  The dark theme & light theme is depends by system.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Support
+
+For support, WhatsApp 085155167794.
+

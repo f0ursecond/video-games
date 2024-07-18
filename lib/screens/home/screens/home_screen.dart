@@ -114,6 +114,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   firstPageProgressIndicatorBuilder: (context) {
                     return const CustomLoadingIndicator();
                   },
+                  noMoreItemsIndicatorBuilder: (context) {
+                    return const Text('No Items More');
+                  },
+                  noItemsFoundIndicatorBuilder: (context) {
+                    return const Center(child: Text('Not Found'));
+                  },
                   itemBuilder: (BuildContext context, ResGames data, int index) {
                     var dateToString = DateTime.parse(
                       data.released != null ? data.released.toString() : DateTime.now().toString(),

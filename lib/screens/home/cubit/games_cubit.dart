@@ -43,30 +43,4 @@ class GamesCubit extends Cubit<GamesState> {
       );
     }
   }
-
-  void fetchGames({int page = 1, String? query}) async {
-    if (state.hasReachedMax) return;
-
-    if (page == 1) {
-      emit(state.copyWith(status: GamesLoadStatus.loading));
-    } else {
-      emit(state.copyWith(status: GamesLoadStatus.loadingMore));
-    }
-
-    final result = await repo.getAllGames(page: page, query: query);
-
-    result.fold(
-      (failure) => emit(state.copyWith(status: GamesLoadStatus.failure)),
-      (games) {
-        final hasReachedMax = games.length < 10;
-        emit(state.copyWith(
-          status: GamesLoadStatus.success,
-          games: page == 1 ? games : List.of(state.games)
-            ..addAll(games),
-          page: page,
-          hasReachedMax: hasReachedMax,
-        ));
-      },
-    );
-  }
 }
