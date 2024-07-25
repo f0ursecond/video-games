@@ -18,7 +18,3 @@ flutter run
 ```
 **_NOTE:_**  The dark theme & light theme is depends by system.
 
-## Support
-
-For support, WhatsApp 085155167794.
-
